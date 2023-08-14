@@ -15,7 +15,8 @@ module.exports = withBundleAnalyzer({
       's3.us-west-2.amazonaws.com',
       'blog.cgsilva.com.br'
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif'],
+    minimumCacheTTL: 360,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   }
