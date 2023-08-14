@@ -29,7 +29,8 @@ export default async function OGImage(req: NextRequest) {
     method: 'POST',
     body: JSON.stringify({ pageId }),
     headers: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'accept-language': 'pt-BR'
     }
   })
   if (!pageInfoRes.ok) {

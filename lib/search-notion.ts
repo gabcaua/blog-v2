@@ -18,11 +18,13 @@ async function searchNotionImpl(
     method: 'POST',
     body: JSON.stringify(params),
     headers: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'accept-language': 'pt-BR'
     }
   })
     .then((res) => {
       if (res.ok) {
+        //console.log(await res.json())
         return res
       }
 

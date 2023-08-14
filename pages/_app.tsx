@@ -36,6 +36,30 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
+    try {
+      let interval = setInterval(translateButton, 1_200)
+      function translateButton() {
+        if (
+          document.querySelector(
+            'div.breadcrumb.button.notion-search-button span.title'
+          )
+        ) {
+          document.querySelector(
+            'div.breadcrumb.button.notion-search-button span.title'
+          ).innerHTML = 'Pesquisar'
+        }
+
+        if (document.querySelector('input.searchInput')) {
+          let inputElement: any = document.querySelector('input.searchInput')
+
+          inputElement.placeholder = 'Pesquise'
+          clearInterval(interval)
+        }
+      }
+    } catch (error) {
+      console.error(error)
+    }
+
     function onRouteChangeComplete() {
       if (fathomId) {
         Fathom.trackPageview()
