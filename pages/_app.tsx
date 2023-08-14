@@ -37,27 +37,28 @@ export default function App({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     try {
-      let interval = setInterval(translateButton, 1_200)
-      function translateButton() {
-        if (
-          document.querySelector(
-            'div.breadcrumb.button.notion-search-button span.title'
-          )
-        ) {
-          document.querySelector(
-            'div.breadcrumb.button.notion-search-button span.title'
-          ).innerHTML = 'Pesquisar'
-        }
+      const interval = setInterval(translateButton, 1_200)
 
-        if (document.querySelector('input.searchInput')) {
-          let inputElement: any = document.querySelector('input.searchInput')
+      if (document.querySelector('input.searchInput')) {
+        const inputElement: any = document.querySelector('input.searchInput')
 
-          inputElement.placeholder = 'Pesquise'
-          clearInterval(interval)
-        }
+        inputElement.placeholder = 'Pesquise'
+        clearInterval(interval)
       }
     } catch (error) {
       console.error(error)
+    }
+
+    function translateButton() {
+      if (
+        document.querySelector(
+          'div.breadcrumb.button.notion-search-button span.title'
+        )
+      ) {
+        document.querySelector(
+          'div.breadcrumb.button.notion-search-button span.title'
+        ).innerHTML = 'Pesquisar'
+      }
     }
 
     function onRouteChangeComplete() {
