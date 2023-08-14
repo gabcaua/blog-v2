@@ -140,7 +140,7 @@ async function getCompatibleImageUrl(
 
   if (image) {
     const imageUrl = new URL(image)
-
+    imageUrl.searchParams.set('q', '40')
     if (imageUrl.host === 'images.unsplash.com') {
       if (!imageUrl.searchParams.has('w')) {
         imageUrl.searchParams.set('w', '1200')
@@ -148,6 +148,7 @@ async function getCompatibleImageUrl(
         return imageUrl.toString()
       }
     }
+    return imageUrl.toString()
   }
 
   return image
