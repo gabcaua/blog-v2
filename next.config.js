@@ -5,6 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
+  compress: true,
   images: {
     domains: [
       'www.notion.so',
@@ -13,9 +14,10 @@ module.exports = withBundleAnalyzer({
       'pbs.twimg.com',
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
-      'blog.cgsilva.com.br'
+      'blog.cgsilva.com.br',
+      '64.media.tumblr.com'
     ],
-    formats: ['image/avif'],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 360,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"

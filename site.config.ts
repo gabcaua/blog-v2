@@ -13,7 +13,6 @@ export default siteConfig({
   domain: 'beta.cgsilva.com.br',
   author: 'Cauã Gabriel',
   language: 'pt',
-
   // open graph metadata (optional)
   description: 'Fatos de uma vida inteira num site.',
 

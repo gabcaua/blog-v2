@@ -67,7 +67,7 @@ export default async function OGImage(req: NextRequest) {
               position: 'absolute',
               width: '100%',
               height: '100%',
-              objectFit: 'cover'
+              objectFit: 'cover',
               // TODO: satori doesn't support background-size: cover and seems to
               // have inconsistent support for filter + transform to get rid of the
               // blurred edges. For now, we'll go without a blur filter on the
@@ -92,7 +92,7 @@ export default async function OGImage(req: NextRequest) {
             height: 465,
             display: 'flex',
             flexDirection: 'column',
-            border: '16px solid rgba(0,0,0,0.3)',
+            border: '16px solid rgba(0,0,0,0)',
             borderRadius: 8,
             zIndex: '1'
           }}
@@ -104,7 +104,8 @@ export default async function OGImage(req: NextRequest) {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-around',
-              backgroundColor: '#fff',
+              backgroundColor: 'rgba(250, 250, 250, 1)',
+              borderRadius: 80,
               padding: 24,
               alignItems: 'center',
               textAlign: 'center'
@@ -125,7 +126,7 @@ export default async function OGImage(req: NextRequest) {
             </div>
 
             {pageInfo.detail && (
-              <div style={{ fontSize: 32, opacity: 0.6 }}>
+              <div style={{ fontSize: 32, opacity: 0.75 }}>
                 {pageInfo.detail}
               </div>
             )}
@@ -141,8 +142,8 @@ export default async function OGImage(req: NextRequest) {
               height: 128,
               width: 128,
               display: 'flex',
-              borderRadius: '50%',
-              border: '4px solid #fff',
+              borderRadius: '150px',
+              border: '4px solid #000',
               zIndex: '5'
             }}
           >
@@ -150,7 +151,8 @@ export default async function OGImage(req: NextRequest) {
               src={pageInfo.authorImage}
               style={{
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                borderRadius: '150px'
                 // transform: 'scale(1.04)'
               }}
             />

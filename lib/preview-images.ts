@@ -12,7 +12,7 @@ import { mapImageUrl } from './map-image-url'
 export async function getPreviewImageMap(
   recordMap: ExtendedRecordMap
 ): Promise<PreviewImageMap> {
-  const urls: string[] = getPageImageUrls(recordMap, {
+  let urls: string[] = getPageImageUrls(recordMap, {
     mapImageUrl
   })
     .concat([defaultPageIcon, defaultPageCover])
@@ -22,6 +22,8 @@ export async function getPreviewImageMap(
     await pMap(
       urls,
       async (url) => {
+        url = url.replace('q=75', 'q=30') 
+        //console.log(url)
         const cacheKey = normalizeUrl(url)
         return [cacheKey, await getPreviewImage(url, { cacheKey })]
       },
@@ -48,7 +50,7 @@ async function createPreviewImage(
       // ignore redis errors
       console.warn(`redis error get "${cacheKey}"`, err.message)
     }
-
+    url = url.replace('q=85', 'q=30')
     const { body } = await got(url, { responseType: 'buffer' })
     const result = await lqip(body)
     console.log('lqip', { ...result.metadata, url, cacheKey })
