@@ -96,9 +96,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //   : undefined
   const date =
     isBlogPost && datePublished
-      ? `${datePublished.toLocaleString('pt-BR', {
-          month: 'long'
-        })} ${datePublished.getFullYear()}`
+      ? `${datePublished.toLocaleDateString('pt-BR', {
+          month: 'long',
+        })} de ${datePublished.getFullYear()}`
       : undefined
   const detail = date || author || libConfig.domain
 
@@ -137,12 +137,14 @@ async function getCompatibleImageUrl(
   fallbackUrl: string | null
 ): Promise<string | null> {
   const image = (await isUrlReachable(url)) ? url : fallbackUrl
-
+console.log(image)
   if (image) {
+    console.log(image)
     const imageUrl = new URL(image)
     imageUrl.searchParams.set('q', '40')
     if (imageUrl.host === 'images.unsplash.com') {
       if (!imageUrl.searchParams.has('w')) {
+        imageUrl.searchParams.set('q', '40')
         imageUrl.searchParams.set('w', '1200')
         imageUrl.searchParams.set('fit', 'max')
         return imageUrl.toString()
