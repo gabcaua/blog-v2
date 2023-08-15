@@ -34,6 +34,18 @@ body {
   margin-inline-end: 0;
 }
 
+.notion-aside-table-of-contents .notion-table-of-contents-item-body {
+  border: 0;
+  font-weight: 500;
+}
+
+.notion-aside-table-of-contents-header {
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: 1.1em;
+  word-break: break-word;
+}
+
 .static-tweet-emoji {
   height: 1.2em !important;
   width: 1.2em !important;
