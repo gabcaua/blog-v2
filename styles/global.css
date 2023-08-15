@@ -30,6 +30,12 @@ body {
   margin-inline-end: 0;
 }
 
+.notion-page-icon-inline img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+
 .notion-aside-table-of-contents .notion-table-of-contents-item-body {
   border: 0;
   font-weight: 500;
