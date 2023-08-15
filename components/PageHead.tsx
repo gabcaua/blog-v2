@@ -4,6 +4,7 @@ import Head from 'next/head'
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'
 import { getSocialImageUrl } from '@/lib/get-social-image-url'
+import Script from 'next/script'
 
 export const PageHead: React.FC<
   types.PageProps & {
@@ -23,8 +24,8 @@ export const PageHead: React.FC<
 
   return (
     <Head>
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989"
-     crossOrigin="anonymous"></script>
+       <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989"
+     crossOrigin="anonymous"></Script>
       <meta charSet='utf-8' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta
