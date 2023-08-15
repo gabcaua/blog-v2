@@ -32,6 +32,7 @@ export const PageHead: React.FC<
         defer
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989'
         crossOrigin='anonymous'
+        strategy='worker'
         type='text/partytown'
       />
       <meta charSet='utf-8' />
