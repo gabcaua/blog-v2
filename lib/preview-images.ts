@@ -50,7 +50,9 @@ async function createPreviewImage(
       console.warn(`redis error get "${cacheKey}"`, err.message)
     }
     const { body } = await got(url, { responseType: 'buffer' })
-    const result = await lqip(body)
+    const result = await lqip(body, {
+      outputFormat: 'jpg'
+    })
     console.log('lqip', { ...result.metadata, url, cacheKey })
 
     const previewImage = {

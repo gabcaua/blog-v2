@@ -21,10 +21,6 @@ body {
   overflow-x: hidden;
 }
 
-.placeholder {
-  filter: blur(5px);
-  transform: scale(1.1);
-}
 
 .static-tweet blockquote {
   margin: 0;
