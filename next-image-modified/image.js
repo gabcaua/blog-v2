@@ -262,7 +262,7 @@ function Image(_param) {
     const blurStyle = placeholder === 'blur' && !blurComplete ? {
         backgroundSize: objectFit || 'cover',
         backgroundPosition: objectPosition || '0% 0%',
-        filter: 'blur(5px)',
+        filter: 'blur(0px)',
         backgroundImage: `url("${blurDataURL}")`
     } : {};
     if (layout === 'fill') {
