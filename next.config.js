@@ -5,6 +5,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
+  experimental: {
+    nextScriptWorkers: true,
+    optimizeCss: true,
+    workerThreads: true,
+    scrollRestoration: true,
+    swcMinify: true,
+  },
   compress: true,
   swcMinify: true,
   optimizeFonts: true,
