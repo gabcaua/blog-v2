@@ -1,6 +1,6 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
-import Image from '../next-image-modified/image'
+import Image from '../next-opt/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -93,7 +93,7 @@ const Modal = dynamic(
       return m.Modal
     }),
   {
-    ssr: false
+    ssr: true
   }
 )
 
