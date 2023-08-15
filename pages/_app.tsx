@@ -36,13 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
-    router.prefetch('/blog')
-    router.prefetch('/blog/solitaire')
-    router.prefetch('/solitaire')
-    router.prefetch('/fale-comigo')
 
     try {
-      const interval = setInterval(translateButton, 1_200)
+      const interval = setInterval(translateButton, 2_000)
 
       if (document.querySelector('input.searchInput')) {
         const inputElement: any = document.querySelector('input.searchInput')

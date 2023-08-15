@@ -217,7 +217,7 @@ function Image(_param) {
                     config,
                     src,
                     width: widthInt || 400,
-                    quality: qualityInt || 30
+                    quality: qualityInt || 1
                 });
                 let url;
                 try {
@@ -437,7 +437,7 @@ const VALID_LOADING_VALUES = [
     undefined
 ];
 function imgixLoader({ config , src , width , quality  }) {
-    // Demo: https://static.imgix.net/daisy.png?auto=format&fit=max&w=300
+    // Demo: https://static.imgix.net/daisy.png?auto=format&fit=max&w=10
     const url = new URL(`${config.path}${normalizeSrc(src)}`);
     const params = url.searchParams;
     // auto params can be combined with comma separation, or reiteration
@@ -453,7 +453,7 @@ function akamaiLoader({ config , src , width  }) {
     return `${config.path}${normalizeSrc(src)}?imwidth=${width}`;
 }
 function cloudinaryLoader({ config , src , width , quality  }) {
-    // Demo: https://res.cloudinary.com/demo/image/upload/w_300,c_limit,q_auto/turtles.jpg
+    // Demo: https://res.cloudinary.com/demo/image/upload/w_10,c_limit,q_auto/turtles.jpg
     const params = [
         'f_auto',
         'c_limit',
@@ -504,7 +504,7 @@ function defaultLoader({ config , src , width , quality  }) {
         // through the built-in Image Optimization API.
         return src;
     }
-    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 30}`;
+    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 1}`;
 }
 const loaders = new Map([
     [
