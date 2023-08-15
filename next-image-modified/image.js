@@ -217,7 +217,7 @@ function Image(_param) {
                     config,
                     src,
                     width: widthInt || 400,
-                    quality: qualityInt || 30
+                    quality: 30
                 });
                 let url;
                 try {
@@ -444,21 +444,21 @@ function imgixLoader({ config , src , width , quality  }) {
     params.set('auto', params.getAll('auto').join(',') || 'format');
     params.set('fit', params.get('fit') || 'max');
     params.set('w', params.get('w') || width.toString());
-    if (quality) {
-        params.set('q', quality.toString());
+    if (true) {
+        params.set('q', 30);
     }
     return url.href;
 }
 function akamaiLoader({ config , src , width  }) {
     return `${config.path}${normalizeSrc(src)}?imwidth=${width}`;
 }
-function cloudinaryLoader({ config , src , width , quality  }) {
+function cloudinaryLoader({ config , src , width , quality = 30 }) {
     // Demo: https://res.cloudinary.com/demo/image/upload/w_300,c_limit,q_auto/turtles.jpg
     const params = [
         'f_auto',
         'c_limit',
         'w_' + width,
-        'q_' + (quality || 'auto')
+        'q_' + ('30' || 'auto')
     ];
     const paramsString = params.join(',') + '/';
     return `${config.path}${paramsString}${normalizeSrc(src)}`;
@@ -466,7 +466,7 @@ function cloudinaryLoader({ config , src , width , quality  }) {
 function customLoader({ src  }) {
     throw new Error(`Image with src "${src}" is missing "loader" prop.` + `\nRead more: https://nextjs.org/docs/messages/next-image-missing-loader`);
 }
-function defaultLoader({ config , src , width , quality  }) {
+function defaultLoader({ config , src , width , quality = 30 }) {
     if (process.env.NODE_ENV !== 'production') {
         const missingValues = [];
         // these should always be provided but make sure they are
@@ -504,7 +504,7 @@ function defaultLoader({ config , src , width , quality  }) {
         // through the built-in Image Optimization API.
         return src;
     }
-    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 30}`;
+    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${30}`;
 }
 const loaders = new Map([
     [
@@ -755,7 +755,7 @@ const ImageElement = (_param)=>{
         unoptimized,
         layout,
         width: widthInt,
-        quality: qualityInt,
+        quality: 30,
         sizes: noscriptSizes,
         loader
     }), {
