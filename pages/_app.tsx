@@ -36,8 +36,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
+    router.prefetch('/blog')
+    router.prefetch('/blog/solitaire')
     router.prefetch('/solitaire')
     router.prefetch('/fale-comigo')
+
     try {
       const interval = setInterval(translateButton, 1_200)
 
@@ -86,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => {
       router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
-  }, [router.events])
+  }, [router.events, router.prefetch])
 
   return <Component {...pageProps} />
 }
