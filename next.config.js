@@ -9,7 +9,7 @@ module.exports = withBundleAnalyzer({
   swcMinify: true,
   optimizeFonts: true,
   images: {
-    unoptimized: true,
+    unoptimized: false,
     domains: [
       'www.notion.so',
       'notion.so',
