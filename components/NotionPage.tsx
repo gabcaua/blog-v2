@@ -83,7 +83,7 @@ const Equation = dynamic(() =>
 const Pdf = dynamic(
   () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
   {
-    ssr: true
+    ssr: false
   }
 )
 const Modal = dynamic(
@@ -93,7 +93,7 @@ const Modal = dynamic(
       return m.Modal
     }),
   {
-    ssr: true
+    ssr: false
   }
 )
 

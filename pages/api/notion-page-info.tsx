@@ -16,7 +16,7 @@ import { notion } from '@/lib/notion-api'
 import { NotionPageInfo } from '@/lib/types'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === 'POST') {
+  if (req.method !== 'POST') {
     return res.status(405).send({ error: 'method not allowed' })
   }
 
