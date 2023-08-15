@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
       if (document.querySelector('input.searchInput')) {
         const inputElement: any = document.querySelector('input.searchInput')
 
-        inputElement.placeholder = 'Pesquise'
+        inputElement.placeholder = 'Escreva qualquer coisa...'
         clearInterval(interval)
       }
     } catch (error) {
@@ -89,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => {
       router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
-  }, [router.events, router.prefetch])
+  }, [router.events, router.prefetch, router])
 
   return <Component {...pageProps} />
 }

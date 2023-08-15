@@ -2,8 +2,6 @@ import * as React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Partytown } from '@builder.io/partytown/react'
-
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'
 import { getSocialImageUrl } from '@/lib/get-social-image-url'
@@ -26,14 +24,12 @@ export const PageHead: React.FC<
 
   return (
     <Head>
-      <Partytown debug={true} forward={['dataLayer.push']} />
       <Script
         async
         defer
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989'
         crossOrigin='anonymous'
         strategy='worker'
-       {/* type='text/partytown' */}
       />
       <meta charSet='utf-8' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />

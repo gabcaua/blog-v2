@@ -2,6 +2,7 @@ import * as React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { IconContext } from '@react-icons/all-files'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   render() {
@@ -21,7 +22,9 @@ export default class MyDocument extends Document {
           </Head>
 
           <body>
-            <script
+            <Script
+              defer
+              strategy='worker'
               dangerouslySetInnerHTML={{
                 __html: `
 /** Inlined version of noflash.js from use-dark-mode */
