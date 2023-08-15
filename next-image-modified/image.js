@@ -262,7 +262,7 @@ function Image(_param) {
     const blurStyle = placeholder === 'blur' && !blurComplete ? {
         backgroundSize: objectFit || 'cover',
         backgroundPosition: objectPosition || '0% 0%',
-        filter: 'blur(20px)',
+        filter: 'blur(5px)',
         backgroundImage: `url("${blurDataURL}")`
     } : {};
     if (layout === 'fill') {
@@ -492,7 +492,7 @@ function defaultLoader({ config , src , width , quality = 30 }) {
             }
             if (process.env.NODE_ENV !== 'test') {
                 // We use dynamic require because this should only error in development
-                const { hasMatch  } = require('../shared/lib/match-remote-pattern');
+                const { hasMatch } = require('../shared/lib/match-remote-pattern');
                 if (!hasMatch(config.domains, config.remotePatterns, parsedSrc)) {
                     throw new Error(`Invalid src prop (${src}) on \`next/image\`, hostname "${parsedSrc.hostname}" is not configured under images in your \`next.config.js\`\n` + `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`);
                 }
@@ -745,7 +745,7 @@ const ImageElement = (_param)=>{
         onError: (event)=>{
             if (placeholder === 'blur') {
                 // If the real image fails to load, this will still remove the placeholder.
-                setBlurComplete(true);
+                setBlurComplete(false);
             }
             if (onError) {
                 onError(event);
