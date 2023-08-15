@@ -9,7 +9,6 @@ module.exports = withBundleAnalyzer({
     nextScriptWorkers: true,
     optimizeCss: true,
     workerThreads: true,
-    scrollRestoration: true,
   },
   compress: true,
   swcMinify: true,
