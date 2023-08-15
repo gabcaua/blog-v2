@@ -1,10 +1,12 @@
 import * as React from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
+
+import { Partytown } from '@builder.io/partytown/react'
 
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'
 import { getSocialImageUrl } from '@/lib/get-social-image-url'
-import Script from 'next/script'
 
 export const PageHead: React.FC<
   types.PageProps & {
@@ -24,8 +26,14 @@ export const PageHead: React.FC<
 
   return (
     <Head>
-       <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989"
-     crossOrigin="anonymous"></Script>
+      <Partytown debug={true} forward={['dataLayer.push']} />
+      <Script
+        async
+        defer
+        src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989'
+        crossOrigin='anonymous'
+        type='text/partytown'
+      />
       <meta charSet='utf-8' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta
@@ -33,8 +41,18 @@ export const PageHead: React.FC<
         content='width=device-width, initial-scale=1, shrink-to-fit=no'
       />
 
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefffe" key="theme-color-light"/>
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191919" key="theme-color-dark"/>
+      <meta
+        name='theme-color'
+        media='(prefers-color-scheme: light)'
+        content='#fefffe'
+        key='theme-color-light'
+      />
+      <meta
+        name='theme-color'
+        media='(prefers-color-scheme: dark)'
+        content='#191919'
+        key='theme-color-dark'
+      />
 
       <meta name='robots' content='index,follow' />
       <meta property='og:type' content='website' />

@@ -6,13 +6,13 @@
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "repository": "transitive-bullshit/nextjs-notion-starter-kit",
   "license": "MIT",
-  
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run partytown && next build",
     "start": "next start",
     "deploy": "vercel deploy",
     "deps": "run-s deps:*",
+    "partytown": "partytown copylib public/~partytown",
     "deps:update": "[ -z $GITHUB_ACTIONS ] && yarn add notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
     "deps:link": "[ -z $GITHUB_ACTIONS ] && yarn link notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:link on CI'",
     "analyze": "cross-env ANALYZE=true next build",
@@ -23,6 +23,7 @@
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@fisch0920/use-dark-mode": "^2.4.0",
     "@keyvhq/core": "^1.6.9",
     "@keyvhq/redis": "^1.6.10",
