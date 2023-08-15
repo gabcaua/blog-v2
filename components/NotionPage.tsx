@@ -282,7 +282,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         footer={footer}
       />
 
-      <GitHubShareButton />
+      {/*<GitHubShareButton />*/}
     </>
   )
 }
