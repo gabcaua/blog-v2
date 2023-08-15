@@ -245,7 +245,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   return (
     <>
-      <PageHead
+      <PageHead 
         pageId={pageId}
         site={site}
         title={title}
