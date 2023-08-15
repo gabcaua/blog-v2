@@ -8,7 +8,6 @@ module.exports = withBundleAnalyzer({
   experimental: {
     nextScriptWorkers: true,
     optimizeCss: true,
-    workerThreads: true,
   },
   compress: true,
   swcMinify: true,
