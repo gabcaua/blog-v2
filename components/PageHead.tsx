@@ -23,6 +23,8 @@ export const PageHead: React.FC<
 
   return (
     <Head>
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989"
+     crossOrigin="anonymous"></script>
       <meta charSet='utf-8' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta

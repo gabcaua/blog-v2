@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     title: config.name,
     site_url: config.host,
     feed_url: `${config.host}/feed.xml`,
-    language: config.language,
+    language: 'pt-BR  ',
     ttl: ttlMinutes
   })
 
@@ -65,9 +65,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     )
     const publishedTime = getPageProperty<number>('Published', block, recordMap)
     const date = lastUpdatedTime
-      ? new Date(lastUpdatedTime).toLocaleDateString('pt-BR')
+      ? new Date(lastUpdatedTime)
       : publishedTime
-      ? new Date(publishedTime).toLocaleDateString('pt-BR')
+      ? new Date(publishedTime)
       : undefined
     const socialImageUrl = getSocialImageUrl(pageId)
 
