@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           <body>
             <Script
               defer
-              strategy='worker'
+              type="text/partytown"
               dangerouslySetInnerHTML={{
                 __html: `
 /** Inlined version of noflash.js from use-dark-mode */
