@@ -33,7 +33,7 @@ export const PageHead: React.FC<
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989'
         crossOrigin='anonymous'
         strategy='worker'
-        type='text/partytown'
+       {/* type='text/partytown' */}
       />
       <meta charSet='utf-8' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
