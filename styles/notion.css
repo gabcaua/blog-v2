@@ -170,6 +170,11 @@
   text-align: center;
 }
 
+.notion-title b {
+  font-weight: 800;
+  font-size: 4rem
+}
+
 .notion-collection-row {
   padding-bottom: 1em;
 }
@@ -348,11 +353,13 @@
   border-radius: 0;
   background: none !important;
 }
-
+.notion-page-icon-hero.notion-page-icon-image .notion-page-icon {
+border-radius: 50%
+}
 /* if you don't want rounded page icon images, remove this */
 .notion-page-icon-hero.notion-page-icon-image {
   border-radius: 50%;
-  box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
+  box-shadow: 0 8px 35px 0 rgb(0 0 0 / 21%);
 }
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {

@@ -44,6 +44,8 @@ export const NotionPageHeader: React.FC<{
 
   return (
     <header className='notion-header'>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3730111662635989"
+     crossOrigin="anonymous"></script>
       <div className='notion-nav-header'>
         <Breadcrumbs block={block} rootOnly={true} />
 
