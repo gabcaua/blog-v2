@@ -504,7 +504,7 @@ function defaultLoader({ config , src , width , quality = 30 }) {
         // through the built-in Image Optimization API.
         return src;
     }
-    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${30}`;
+    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=30`;
 }
 const loaders = new Map([
     [
@@ -604,7 +604,7 @@ function generateImgAttrs({ config , src , unoptimized , layout , width , qualit
         srcSet: widths.map((w, i)=>`${loader({
                 config,
                 src,
-                quality,
+                quality: 30,
                 width: w
             })} ${kind === 'w' ? w : i + 1}${kind}`).join(', '),
         // It's intended to keep `src` the last attribute because React updates
@@ -616,16 +616,18 @@ function generateImgAttrs({ config , src , unoptimized , layout , width , qualit
         src: loader({
             config,
             src,
-            quality,
+            quality: 30,
             width: widths[last]
         })
     };
 }
 function getInt(x) {
     if (typeof x === 'number') {
+        return 30
         return x;
     }
     if (typeof x === 'string') {
+        return 30
         return parseInt(x, 10);
     }
     return undefined;
