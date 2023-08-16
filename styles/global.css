@@ -41,13 +41,11 @@ body {
   font-weight: 500;
 }
 .notion-table-of-contents-item {
-  color: #101010;
-  opacity: 1;
+  opacity: 0.95;
   transition: all 0.3s 
 }
 
 .notion-table-of-contents-item:hover {
-  color: black;
   opacity: 1;
   font-size: 0.9em;
   transition: all 0.15s ease;
