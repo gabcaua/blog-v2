@@ -177,7 +177,7 @@ function Image(_param) {
                 config,
                 src,
                 width: widthInt || 400,
-                quality: qualityInt || 30
+                quality: qualityInt || 25
             });
             let url;
             try {
@@ -604,7 +604,7 @@ function defaultLoader({ config , src , width , quality  }) {
         // through the built-in Image Optimization API.
         return src;
     }
-    return `${config.path}?url=${encodeURIComponent(src)}&w=${width}&q=${30}`;
+    return `${config.path}?url=${encodeURIComponent(src)}&w=${width}&q=${25}`;
 }
 
 if ((typeof exports.default === 'function' || (typeof exports.default === 'object' && exports.default !== null)) && typeof exports.default.__esModule === 'undefined') {

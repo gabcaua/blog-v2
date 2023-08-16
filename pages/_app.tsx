@@ -36,30 +36,20 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
-
     try {
-      const interval = setInterval(translateButton, 2_000)
+      const interval = setInterval(() => {
+        if (document.querySelector('input.searchInput')) {
+          const inputElement: any = document.querySelector('input.searchInput')
+          inputElement.placeholder = 'Escreva qualquer coisa...'
+          clearInterval(interval)
+        }
 
-      if (document.querySelector('input.searchInput')) {
-        const inputElement: any = document.querySelector('input.searchInput')
-
-        inputElement.placeholder = 'Escreva qualquer coisa...'
-        clearInterval(interval)
-      }
-    } catch (error) {
-      console.error(error)
-    }
-
-    function translateButton() {
-      if (
-        document.querySelector(
-          'div.breadcrumb.button.notion-search-button span.title'
-        )
-      ) {
         document.querySelector(
           'div.breadcrumb.button.notion-search-button span.title'
         ).innerHTML = 'Pesquisar'
-      }
+      }, 2_000)
+    } catch (error) {
+      //  console.error(error)
     }
 
     function onRouteChangeComplete() {

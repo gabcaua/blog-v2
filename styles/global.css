@@ -40,6 +40,18 @@ body {
   border: 0;
   font-weight: 500;
 }
+.notion-table-of-contents-item {
+  color: #101010;
+  opacity: 1;
+  transition: all 0.3s 
+}
+
+.notion-table-of-contents-item:hover {
+  color: black;
+  opacity: 1;
+  font-size: 0.9em;
+  transition: all 0.15s ease;
+}
 
 .notion-aside-table-of-contents-header {
   text-transform: uppercase;

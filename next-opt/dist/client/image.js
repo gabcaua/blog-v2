@@ -217,7 +217,7 @@ function Image(_param) {
                     config,
                     src,
                     width: widthInt || 400,
-                    quality: qualityInt || 1
+                    quality: qualityInt || 25
                 });
                 let url;
                 try {
@@ -504,7 +504,7 @@ function defaultLoader({ config , src , width , quality  }) {
         // through the built-in Image Optimization API.
         return src;
     }
-    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 1}`;
+    return `${(0, _normalizeTrailingSlash).normalizePathTrailingSlash(config.path)}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 25}`;
 }
 const loaders = new Map([
     [
