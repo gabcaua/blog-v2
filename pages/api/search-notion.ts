@@ -16,7 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.setHeader(
       'Cache-Control',
-      'public, s-maxage=60, max-age=60, stale-while-revalidate=60'
+      'public, s-maxage=3600, max-age=3600, stale-while-revalidate=3600'
     )
     res.status(200).json(results)
   }

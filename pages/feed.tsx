@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     title: config.name,
     site_url: config.host,
     feed_url: `${config.host}/feed.xml`,
-    language: 'pt-BR  ',
+    language: 'pt-BR',
     ttl: ttlMinutes
   })
 
