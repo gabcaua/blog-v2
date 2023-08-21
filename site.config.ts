@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Oi, mundo.',
-  domain: 'beta.cgsilva.com.br',
+  domain: 'blog.cgsilva.com.br',
   author: 'Cauã Gabriel',
   language: 'pt',
   // open graph metadata (optional)
